@@ -64,21 +64,18 @@
 
             <div class="pure-u-1">
                 <nav>
-                    <div id="hamburger" class="custom-toggle">
-                        <a href="#" class="" id="toggle"><s class="bar">-</s><s class="bar">-</s></a>
-                    </div>
+                       
+                    <input id="toggle" type="checkbox" />
+                   
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                
                     
                     <div id="dynamic-menu" class="pure-menu pure-menu-horizontal dynamic">
                         <ul class="pure-menu-list">
                             <li class="pure-menu-item"><a class="pure-menu-link" href="{% url 'pages:index' %}">Home</a></li>
-                            
-                            
-                                    {#% get_nav_bar %#}
-                                    <li class="pure-menu-item menuTransform"><a href="{% url 'pages:page' 'photos' %}" class="pure-menu-link">Photography</a></li>
-                                    <li class="pure-menu-item menuTransform"><a href="{% url 'pages:page' 'tech' %}" class="pure-menu-link">Technology Services</a></li>
-                                    <li class="pure-menu-item menuTransform"><a href="{% url 'pages:page' 'video' %}" class="pure-menu-link">Videography</a></li>
-                                    <li class="pure-menu-item menuTransform"><a href="{% url 'pages:contact' %}" class="pure-menu-link">Contact</a></li>
-                            
+                            {% get_nav_bar %}
                         </ul>
                         
                     </div>
@@ -86,9 +83,8 @@
             </div>
             
 
-            </div>
             {% endblock %}
-        </div>
+            </div>
        
             {% block content %}{% endblock %}
         </div>

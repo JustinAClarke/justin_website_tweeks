@@ -1,6 +1,15 @@
+@font-face {
+    font-family: "RawengulkSans";
+    src: url("/static/justin/fonts/RawengulkSans-094.ttf");
+    font-family: "GreatVibes-Regular";
+    src: url("/static/justin/fonts/GreatVibes-Regular.ttf");
+  
+}
+
+
 .active{
-font-style: italic;
-text-decoration: underline;
+    font-style: italic;
+    text-decoration: underline;
 
 }
 
@@ -24,6 +33,8 @@ body {
     position: relative;
     width: 100%;
     color: #fff;
+    font-family: "RawengulkSans", serif;
+    font-size: larger;
 }
 
 
@@ -31,6 +42,8 @@ body {
     font-size: 120%;
     color: #fff;
     text-shadow: 2px 2px #8080807f;
+    font-family: "RawengulkSans", serif;
+    font-weight: bold;
 }
 
 .pure-menu-link a:visited, .pure-menu-heading a:visited{ 
@@ -46,6 +59,104 @@ input, textarea, select{
 custom-toggle{
     display: none;
 }
+
+#navbar, .pure-menu-list{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+}
+
+
+
+nav input
+{
+    display: none;
+    width: 40px;
+    height: 35px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+
+nav span
+{
+    left: 10px;
+    top: 5px;
+
+    display: none;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+  
+    -webkit-transition:  transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+    -moz-transition:  transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+    -ms-transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+nav span:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+nav span:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+
+nav input:checked ~ span
+{
+    opacity: 1;
+    -webkit-transform: rotate(45deg) translate(-2px, -1px);
+    -moz-transform: rotate(45deg) translate(-2px, -1px);
+    -ms-transform: rotate(45deg) translate(-2px, -1px);
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+nav input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+    -moz-transform: rotate(0deg) scale(0.2, 0.2);
+    -ms-transform: rotate(0deg) scale(0.2, 0.2);
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+nav input:checked ~ span:nth-last-child(2)
+{
+    -webkit-transform: rotate(-45deg) translate(0, -1px);
+    -moz-transform: rotate(-45deg) translate(0, -1px);
+    -ms-transform: rotate(-45deg) translate(0, -1px);
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+
 
 
 @media(max-width:850px){
@@ -71,49 +182,13 @@ custom-toggle{
         display: block;
         height: 300px;
     }
+    nav input
+    {
+        display: block;
+    }
+    nav span
+    {
+        display: block;
+    }
 
-}
-
-
-.custom-toggle .bar {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.custom-toggle .bar {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.custom-toggle .bar:first-child {
-    -webkit-transform: translateY(-6px);
-    -moz-transform: translateY(-6px);
-    -ms-transform: translateY(-6px);
-    transform: translateY(-6px);
-}
-
-
-.custom-toggle.x .bar {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.custom-toggle.x .bar:first-child {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-
-#navbar, .pure-menu-list{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
 }

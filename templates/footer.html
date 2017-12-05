@@ -1,19 +1,40 @@
 <div id="dev">
 <hr>
     {% load static %}
-    Created by: <br>
-    <a href="/page/tech">
-    <!--a href="http://justin.fuhrmeister-clarke.com/page/tech"-->
-        <img alt="Justin Furhmeister-Clarke Technical Services" title="Justin Furhmeister-Clarke Technical Services" id="footer_logo" src='{% static "justin/images/JFC-TS.svg" %}' />
-    </a>
+    Written in <a href="https://www.djangoproject.com/">Django</a><br>
+    <div>
+        <div class="logos">
+            Created by: <br>
+
+            <a href="/page/tech">
+            <!--a href="http://justin.fuhrmeister-clarke.com/page/tech"-->
+                <img alt="Justin Furhmeister-Clarke Technical Services" title="Justin Furhmeister-Clarke Technical Services" id="footer_logo" src='{% static "justin/images/JFC logo base white.svg" %}' />
+            </a>
+        </div>
+        <div class="logos">
+            Find me on: <br>
+
+            <a href="https://github.com/JustinFuhrmeister-Clarke">
+                <img alt="GitHub" title="GitHub" id="footer_logo" src='{% static "justin/images/GitHub-Mark-Light-64px.png" %}' />
+            </a>
+        </div>
+    
+    </div>
+    
 </div>
 <style>
     #dev{
-        margin-left:auto;
-        margin-right:auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
     #footer_logo{
-        width:60px;
-        height:auto;
+        width: 60px;
+        height: auto;
+    }
+    .logos{
+        display: inline-block;
+        padding-right: 10px;
+        padding-left: 10px; 
     }
 </style>
